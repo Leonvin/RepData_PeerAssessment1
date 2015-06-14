@@ -1,25 +1,27 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
 
+# Loading and preprocessing the data
+## Unzip the data file into the working directory
 
-## Loading and preprocessing the data
+data <- read.csv("activity.csv")
 
+# What is mean total number of steps taken per day?
 
-
-## What is mean total number of steps taken per day?
-
-
-
-## What is the average daily activity pattern?
+library(ggplot2)
+total.steps <- tapply(data$steps, data$date, FUN=sum, na.rm=TRUE)
+windows()
+qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
+mean(total.steps, na.rm=TRUE)
+median(total.steps, na.rm=TRUE)
 
 
 
-## Imputing missing values
+# What is the average daily activity pattern?
 
-
-
-## Are there differences in activity patterns between weekdays and weekends?
+library(ggplot2)
+averages <- aggregate(x=list(steps=data$steps), by=list(interval=data$interval),
+                      FUN=mean, na.rm=TRUE)
+ggplot(data=averages, aes(x=interval, y=steps)) +
+  geom_line() +
+  xlab("5-minute interval") +
+  ylab("average number of steps taken")
+averages[which.max(averages$steps),]
