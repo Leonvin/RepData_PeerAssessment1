@@ -300,3 +300,17 @@ xyplot(avg ~ interval | day, data = df_final, layout = c(1, 2),
 ```
 
 ![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png) 
+
+The plots indicate that the average number of steps (physical activity) during the weekend between the approximate intervals of1000 to 1600 are a bit higher in comparison for the same interval during the weekdays.  
+
+3. **Creating an html, md document in Working Directory**  
+
+Make sure the "PA1_template.Rmd" is in the working direcory. Using below code we will get the html and md documents generated in the working directory.  
+
+
+```r
+# require(knitr)   
+# knit2html("PA1_template.Rmd") 
+```
+
+
