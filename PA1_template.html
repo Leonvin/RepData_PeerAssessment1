@@ -241,9 +241,7 @@ classes
 
 <h3><strong>What is mean total number of steps taken per day?</strong></h3>
 
-<ol>
-<li><strong>Calculating the total number of steps taken per day</strong> (tspd)<br/></li>
-</ol>
+<p><strong>1. Calculating the total number of steps taken per day</strong> (tspd)  </p>
 
 <pre><code class="r">tspd &lt;- tapply(a_m_data$steps, a_m_data$date, sum, na.rm = T)
 head(tspd)
@@ -253,9 +251,7 @@ head(tspd)
 ##          0        126      11352      12116      13294      15420
 </code></pre>
 
-<ol>
-<li><strong>Plotting a histogram of the total number of steps per day</strong><br/></li>
-</ol>
+<p><strong>2. Plotting a histogram of the total number of steps per day</strong>  </p>
 
 <p>Difference between histogram and a barplot:<br/>
 Histogram - they are used to present &ldquo;continuous data&rdquo;, that is data that represents measured quantity where, at least in theory, the numbers can take on any value in a certain range. A good example is weight. If you measure the weights of a group of adults you might get and numbers between say 80 pounds and 270 pounds.<br/>
@@ -271,9 +267,7 @@ text(median(tspd),25, &quot;median = 10395&quot;, cex = 0.8, col = &quot;darkmag
 
 <p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-3"/> </p>
 
-<ol>
-<li><strong>Calculating the mean and median of the total number of steps taken per day</strong><br/></li>
-</ol>
+<p><strong>3. Calculating the mean and median of the total number of steps taken per day</strong>  </p>
 
 <pre><code class="r">mean_tspd &lt;- round(mean(tspd))
 median_tspd &lt;- round(median(tspd))
@@ -309,9 +303,7 @@ max_ns
 
 <h3><strong>Imputing missing values</strong></h3>
 
-<ol>
-<li><strong>Calculating the total number of missing values in the dataset</strong><br/></li>
-</ol>
+<p><strong>1. Calculating the total number of missing values in the dataset</strong>   </p>
 
 <pre><code class="r">table(is.na(a_m_data) == TRUE)
 </code></pre>
@@ -321,9 +313,7 @@ max_ns
 ## 50400  2304
 </code></pre>
 
-<ol>
-<li><strong>Devising a strategy for filling in all of the missing values in the dataset</strong><br/></li>
-</ol>
+<p><strong>2. Devising a strategy for filling in all of the missing values in the dataset</strong>    </p>
 
 <p>Checking to see which columns in the data set have NA values.  </p>
 
@@ -344,9 +334,7 @@ max_ns
 
 <p><strong>Strategy</strong> - All the NA values within the <strong>steps</strong> variable will be replaced by their corresponding <strong>mean of steps</strong> information, found in the <strong>adap</strong> data set above.  </p>
 
-<ol>
-<li><strong>Creating a new dataset</strong><br/></li>
-</ol>
+<p><strong>3. Creating a new dataset</strong>  </p>
 
 <pre><code class="r">a_m_data2 &lt;- a_m_data  # creation of the dataset that will have no more NAs
 for (i in 1:nrow(a_m_data)){
@@ -380,9 +368,7 @@ head(a_m_data2)
 
 <p>The <strong>summary</strong> indicates that there are no more NA values.  </p>
 
-<ol>
-<li><strong>Using the new dataset to create a new histogram</strong><br/></li>
-</ol>
+<p><strong>4. Using the new dataset to create a new histogram</strong>  </p>
 
 <pre><code class="r">tspd2 &lt;- tapply(a_m_data2$steps, a_m_data2$date, sum, na.rm = T)
 hist(tspd2, xlab = &quot;sum of steps per day&quot;, 
@@ -416,9 +402,7 @@ print(a_m_data_summary)
 
 <h3><strong>Are there differences in activity patterns between weekdays and weekends?</strong></h3>
 
-<ol>
-<li><strong>Creating a new factor variable in the dataset with two levels - &ldquo;weekday&rdquo; and &ldquo;weekend&rdquo; indicating whether a given date is a weekday or weekend day</strong><br/></li>
-</ol>
+<p><strong>1. Creating a new factor variable in the dataset with two levels - &ldquo;weekday&rdquo; and &ldquo;weekend&rdquo; indicating whether a given date is a weekday or weekend day</strong>  </p>
 
 <pre><code class="r">a_m_data2$weekday &lt;- c(&quot;weekday&quot;)
 a_m_data2[weekdays(as.Date(a_m_data2[, 2])) 
@@ -457,9 +441,7 @@ mean_a_m_data2_weekend &lt;- tapply(a_m_data2_weekend$steps,
                                  a_m_data2_weekend$interval, mean)
 </code></pre>
 
-<ol>
-<li><strong>Making a panel plot containing a time series plot (i.e. type = &ldquo;l&rdquo;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis)</strong><br/></li>
-</ol>
+<p><strong>2. Making a panel plot containing a time series plot (i.e. type = &ldquo;l&rdquo;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis)</strong>  </p>
 
 <pre><code class="r">library(lattice)
 df_weekday &lt;- data.frame(interval = unique(a_m_data2_weekday$interval), 
@@ -478,9 +460,7 @@ xyplot(avg ~ interval | day, data = df_final, layout = c(1, 2),
 
 <p>The plots indicate that the average number of steps (physical activity) during the weekend between the approximate intervals of1000 to 1600 are a bit higher in comparison for the same interval during the weekdays.  </p>
 
-<ol>
-<li><strong>Creating an html, md document in Working Directory</strong><br/></li>
-</ol>
+<p><strong>3. Creating an html, md document in Working Directory</strong>  </p>
 
 <p>Make sure the &ldquo;PA1_template.Rmd&rdquo; is in the working direcory. Using below code we will get the html and md documents generated in the working directory.  </p>
 

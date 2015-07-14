@@ -49,7 +49,7 @@ classes
 
 ### **What is mean total number of steps taken per day?**  
 
-1. **Calculating the total number of steps taken per day** (tspd)  
+**1. Calculating the total number of steps taken per day** (tspd)  
 
 
 ```r
@@ -62,7 +62,7 @@ head(tspd)
 ##          0        126      11352      12116      13294      15420
 ```
 
-2. **Plotting a histogram of the total number of steps per day**  
+**2. Plotting a histogram of the total number of steps per day**  
 
 Difference between histogram and a barplot:  
 Histogram - they are used to present "continuous data", that is data that represents measured quantity where, at least in theory, the numbers can take on any value in a certain range. A good example is weight. If you measure the weights of a group of adults you might get and numbers between say 80 pounds and 270 pounds.    
@@ -80,7 +80,7 @@ text(median(tspd),25, "median = 10395", cex = 0.8, col = "darkmagenta")
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
-3. **Calculating the mean and median of the total number of steps taken per day**  
+**3. Calculating the mean and median of the total number of steps taken per day**  
 
 
 ```r
@@ -122,7 +122,7 @@ The 5-minute interval, on average across all days in the dataset, that contains 
 
 ### **Imputing missing values**  
 
-1. **Calculating the total number of missing values in the dataset**   
+**1. Calculating the total number of missing values in the dataset**   
 
 
 ```r
@@ -135,7 +135,7 @@ table(is.na(a_m_data) == TRUE)
 ## 50400  2304
 ```
 
-2. **Devising a strategy for filling in all of the missing values in the dataset**    
+**2. Devising a strategy for filling in all of the missing values in the dataset**    
 
 Checking to see which columns in the data set have NA values.  
 
@@ -158,7 +158,7 @@ It indicates that only the **steps** column has NA data - 2304 of them.
 
 **Strategy** - All the NA values within the **steps** variable will be replaced by their corresponding **mean of steps** information, found in the **adap** data set above.  
 
-3. **Creating a new dataset**  
+**3. Creating a new dataset**  
 
 
 ```r
@@ -197,7 +197,7 @@ summary(a_m_data2)
 
 The **summary** indicates that there are no more NA values.  
 
-4. **Using the new dataset to create a new histogram**  
+**4. Using the new dataset to create a new histogram**  
 
 
 ```r
@@ -238,7 +238,7 @@ As indicated from above summary table, the values for the median and the mean ar
 
 ### **Are there differences in activity patterns between weekdays and weekends?**  
 
-1. **Creating a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day**  
+**1. Creating a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day**  
 
 
 ```r
@@ -285,7 +285,7 @@ mean_a_m_data2_weekend <- tapply(a_m_data2_weekend$steps,
                                  a_m_data2_weekend$interval, mean)
 ```
 
-2. **Making a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis)**  
+**2. Making a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis)**  
 
 
 ```r
@@ -306,7 +306,7 @@ xyplot(avg ~ interval | day, data = df_final, layout = c(1, 2),
 
 The plots indicate that the average number of steps (physical activity) during the weekend between the approximate intervals of1000 to 1600 are a bit higher in comparison for the same interval during the weekdays.  
 
-3. **Creating an html, md document in Working Directory**  
+**3. Creating an html, md document in Working Directory**  
 
 Make sure the "PA1_template.Rmd" is in the working direcory. Using below code we will get the html and md documents generated in the working directory.  
 
