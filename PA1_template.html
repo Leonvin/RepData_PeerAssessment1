@@ -207,7 +207,9 @@ hr {
 
 <pre><code class="r"># make sure the data set is in the working directory
 
-a_m_data &lt;- read.csv(&quot;activity.csv&quot;,stringsAsFactors = FALSE, header = TRUE,sep = &quot;,&quot;) # a_m_data is &quot;activity monitoring data&quot;
+a_m_data &lt;- read.csv(&quot;activity.csv&quot;,stringsAsFactors = FALSE, 
+                     header = TRUE,sep = &quot;,&quot;) 
+# a_m_data is &quot;activity monitoring data&quot;
 head(a_m_data)
 </code></pre>
 
@@ -399,7 +401,8 @@ median_tspd2 &lt;- round(median(tspd2))
 
 <p>For the new dataset - the mean of the total number of steps taken per day is <strong>1.0766 &times; 10<sup>4</sup></strong> and the median is <strong>1.0766 &times; 10<sup>4</sup></strong>.  </p>
 
-<pre><code class="r">a_m_data_summary &lt;- rbind(data.frame(mean = c(mean_tspd, mean_tspd2), median = c(median_tspd, median_tspd2)))
+<pre><code class="r">a_m_data_summary &lt;- rbind(data.frame(mean = c(mean_tspd, mean_tspd2), 
+                                     median = c(median_tspd, median_tspd2)))
 rownames(a_m_data_summary) &lt;- c(&quot;a_m_data (with NA&#39;s)&quot;, &quot;a_m_data2 (without NA&#39;s)&quot;)
 print(a_m_data_summary)
 </code></pre>

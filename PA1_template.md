@@ -8,7 +8,9 @@
 ```r
 # make sure the data set is in the working directory
 
-a_m_data <- read.csv("activity.csv",stringsAsFactors = FALSE, header = TRUE,sep = ",") # a_m_data is "activity monitoring data"
+a_m_data <- read.csv("activity.csv",stringsAsFactors = FALSE, 
+                     header = TRUE,sep = ",") 
+# a_m_data is "activity monitoring data"
 head(a_m_data)
 ```
 
@@ -220,7 +222,8 @@ For the new dataset - the mean of the total number of steps taken per day is **1
 
 
 ```r
-a_m_data_summary <- rbind(data.frame(mean = c(mean_tspd, mean_tspd2), median = c(median_tspd, median_tspd2)))
+a_m_data_summary <- rbind(data.frame(mean = c(mean_tspd, mean_tspd2), 
+                                     median = c(median_tspd, median_tspd2)))
 rownames(a_m_data_summary) <- c("a_m_data (with NA's)", "a_m_data2 (without NA's)")
 print(a_m_data_summary)
 ```
